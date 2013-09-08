@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {% block head %}
         <title>{{ config.site_title }} -- {{ meta.title }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap -->
+        {% block styles %}
         {{ bootstrap_css_min }}
         {{ theme_stylesheet }}
         <link rel="stylesheet" href="{{ theme_url }}/style.css" type="text/css" />
-          <link rel="stylesheet" href="{{ theme_url }}/fonts/open-sans/stylesheet.css" type="text/css" />
-
+        <link rel="stylesheet" href="{{ theme_url }}/fonts/open-sans/stylesheet.css" type="text/css" />
+        {% endblock styles %}
+        {% endblock head %}
     </head>
     <body>
 
         <header>
+            {% block header %}
             <nav id="top-nav" class="navbar navbar-fixed-top">
                 <div class="container">
                     <ul class="nav navbar-nav pull-right">
@@ -25,24 +29,35 @@
                     </a>
                     <!-- container -->
                 </div>
-
+                {% endblock header %}
             </nav>
 
-            {% include tpl.cover ignore missing %}
-
+            {% block cover %} {% include tpl.cover ignore missing %} {% endblock cover %}
         </header>
-
         <section id="content">
-            {% include tpl.content ignore missing %}
+            {% block content %}
+            <div class="container">
+                <!-- CLASS -->
+                <div class="row">
+                    <div class="col-12 col-lg-8 post">
+                        {{ content }}
+                    </div>
+                    <!-- CLASS -->
+                    <div id="sidebar" class="col-4 col-lg-4 menu-list">
+                        {% include views.recently %}
+                        <!--{% include views.gallery %}-->
+                    </div>
+                </div>
+                <!-- ******end - row****** -->
+            </div>
+            {% endblock content %}
         </section>
         <footer class="primary-color-4">
+            {% block footer %}
             {% include tpl.footer ignore missing %}
-
-
-         {{ theme.organization }} {{ theme.copyright }}
-
+            {{ theme.organization }} {{ theme.copyright }}
             <!-- ******end - row****** -->
-
+            {% endblock footer %}
         </footer>
         <!-- JavaScript plugins (requires jQuery) -->
         <script src="{{ theme_url }}/js/jquery-1.10.2.min.js"></script>
