@@ -65,6 +65,19 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, sunt, facere, eius nemo sed quas atque asperiores qui nulla animi mollitia inventore rem consectetur temporibus quisquam? Consequuntur, porro, ipsam quasi obcaecati enim ipsum consectetur. Nobis, non, natus, aliquid, eos numquam asperiores culpa molestiae mollitia quod odit voluptates consectetur veritatis saepe fugit illum adipisci exercitationem cumque tempore animi optio nihil dolorem perspiciatis impedit repellendus veniam deserunt quam sunt labore est? Optio, vitae pariatur minus natus quia facere consectetur facilis error adipisci.</p>
             </aside>
         </div>
+        <div class="col-md-4">
+            {% block address %}
+            <address class="default-text">
+                <span>{{ config.organization }}</span>
+            <span>{{ config.contact_address }}</span>
+            <span>{{ config.contact_name }}</span>
+            <span><abbr title="Phone">P: </abbr> {{ config.contact_number }}</span>
+            {% endblock address %}
+        </address>
+        </div>
+
+
+
     </div>
 </div>
             {{ theme.organization }} {{ theme.copyright }}

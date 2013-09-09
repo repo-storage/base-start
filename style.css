@@ -6,3 +6,18 @@ SECTION {
 FIGURE.pull-left, FIGURE.pull-right {
 	margin: 10px;
 }
+
+address span {
+	display: block;
+	padding-bottom: 10px;
+	padding-left: 0;
+	padding-left: 0px;
+	border-bottom: 1px #323232 dotted;
+	margin-bottom: 10px;
+
+}
+
+span > span {
+	display: inline;
+	border: none;
+}
