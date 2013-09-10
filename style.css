@@ -47,3 +47,7 @@ address {
 #sidebar {
 	padding-top: 0;
 }
+
+footer > div {
+	margin-bottom: 40px;
+}
