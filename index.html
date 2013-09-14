@@ -17,7 +17,7 @@
 
         <header>
             {% block header %}
-            <nav id="top-nav" class="navbar navbar-fixed-top">
+            <nav id="top-nav" class="navbar">
                 <div class="container">
                     <ul class="nav navbar-nav pull-right">
                         {% for page in pages if page.date is empty %}
@@ -93,5 +93,6 @@
         <!-- Optionally enable responsive features in IE8 -->
         <script src="{{ theme_url }}/js/respond/respond.min.js"></script>
         <script src="{{ theme_url }}/js/fixie_min.js" ></script>
+        <script src="{{ theme_url }}/assets/js/waypoints.min.js" ></script>
     </body>
 </html>
