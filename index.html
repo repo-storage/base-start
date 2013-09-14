@@ -14,24 +14,25 @@
         {% endblock head %}
     </head>
     <body>
+        {% block nav %}
+        <nav id="top-nav" class="navbar" data-trigger="#cover">
+            <div class="container">
+                <ul class="nav navbar-nav pull-right">
+                    {% for page in pages if page.date is empty %}
+                    <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                    {% endfor %}
+                </ul>
+                <a href="{{ base_url }}" class="navbar-brand sub-headlines">                        {{ config.site_title }}
+                </a>
+                <!-- container -->
+            </div>
 
+        </nav>
+        {% endblock nav %}
         <header>
             {% block header %}
-            <nav id="top-nav" class="navbar" data-trigger="#cover">
-                <div class="container">
-                    <ul class="nav navbar-nav pull-right">
-                        {% for page in pages if page.date is empty %}
-                        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-                        {% endfor %}
-                    </ul>
-                    <a href="{{ base_url }}" class="navbar-brand sub-headlines">                        {{ config.site_title }}
-                    </a>
-                    <!-- container -->
-                </div>
-                {% endblock header %}
-            </nav>
-
             {% block cover %} {% include tpl.cover ignore missing %} {% endblock cover %}
+            {% endblock header %}
         </header>
         <section id="content">
             {% block content %}
@@ -53,33 +54,33 @@
         </section>
         <footer class="primary-color-4">
             {% block footer %}
-        <div class="container">
-    <div class="row">
-        <div class="col-md-8 headlines">
-            <aside class="bio">
-                <figure class="pull-left">
-                    <img src="http://lorempixel.com/90/90/people" alt="">
-                </figure>
-                <h1>Lorem ipsum dolor.</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, sunt, facere, eius nemo sed quas atque asperiores qui nulla animi mollitia inventore rem consectetur temporibus quisquam? Consequuntur, porro, ipsam quasi obcaecati enim ipsum consectetur. Nobis, non, natus, aliquid, eos numquam asperiores culpa molestiae mollitia quod odit voluptates consectetur veritatis saepe fugit illum adipisci exercitationem cumque tempore animi optio nihil dolorem perspiciatis impedit repellendus veniam deserunt quam sunt labore est? Optio, vitae pariatur minus natus quia facere consectetur facilis error adipisci.</p>
-            </aside>
-        </div>
-        <div class="col-md-4">
-            {% block address %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 headlines">
+                        <aside class="bio">
+                            <figure class="pull-left">
+                                <img src="http://lorempixel.com/90/90/people" alt="">
+                            </figure>
+                            <h1>Lorem ipsum dolor.</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, sunt, facere, eius nemo sed quas atque asperiores qui nulla animi mollitia inventore rem consectetur temporibus quisquam? Consequuntur, porro, ipsam quasi obcaecati enim ipsum consectetur. Nobis, non, natus, aliquid, eos numquam asperiores culpa molestiae mollitia quod odit voluptates consectetur veritatis saepe fugit illum adipisci exercitationem cumque tempore animi optio nihil dolorem perspiciatis impedit repellendus veniam deserunt quam sunt labore est? Optio, vitae pariatur minus natus quia facere consectetur facilis error adipisci.</p>
+                        </aside>
+                    </div>
+                    <div class="col-md-4">
+                        {% block address %}
 
-            <address class="default-text">
-                <span class="sub-headlines"><span class="address-icon glyphicon glyphicon-map-marker"></span> {{ config.organization }}</span>
-            <span>{{ config.contact_address }}</span>
-            <span>{{ config.contact_name }}</span>
-            <span><abbr title="Phone">P: </abbr> {{ config.contact_number }}</span>
-            {% endblock address %}
-        </address>
-        </div>
+                        <address class="default-text">
+                            <span class="sub-headlines"><span class="address-icon glyphicon glyphicon-map-marker"></span> {{ config.organization }}</span>
+                            <span>{{ config.contact_address }}</span>
+                            <span>{{ config.contact_name }}</span>
+                            <span><abbr title="Phone">P: </abbr> {{ config.contact_number }}</span>
+                            {% endblock address %}
+                        </address>
+                    </div>
 
 
 
-    </div>
-</div>
+                </div>
+            </div>
             {{ config.organization }} : {{ config.copyright }}
             <!-- ******end - row****** -->
             {% endblock footer %}
