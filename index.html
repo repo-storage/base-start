@@ -39,14 +39,18 @@
             <div class="container">
                 <!-- CLASS -->
                 <div class="row">
-                    <div class="col-12 col-lg-8 post">
+                    {% block post %}
+                    <div class="col-md-8 post">
                         {{ content }}
                     </div>
+                    {% endblock post %}
                     <!-- CLASS -->
-                    <div id="sidebar" class="col-4 col-lg-4 menu-list">
+{% block sidebar %}
+                    <div id="sidebar" class="col-md-4 menu-list">
                         {% include views.recently %}
                         <!--{% include views.gallery %}-->
                     </div>
+{% endblock sidebar %}
                 </div>
                 <!-- ******end - row****** -->
             </div>
