@@ -17,7 +17,7 @@
     <body>
         <span id="top-page">   <!-- class content --> </span>
         {% block nav %}
-        <nav id="top-nav" class="nav" data-trigger="#cover">
+        <nav id="top-nav" data-trigger="#cover">
             <div class="container">
                 <ul class="nav navbar-nav pull-right">
                     {% for page in pages if page.date is empty %}
@@ -95,9 +95,9 @@
             <!-- ******end - row****** -->
             {% endblock footer %}
         </footer>
-
+<a href="#top-page" id="top-link"><i class="loops-arrows"></i>top</a>
         {% block scripts %}
-       <a href="#top-page" id="top-link"><i class="loops-arrows"></i>top</a>
+
        <!-- JavaScript plugins (requires jQuery) -->
         <script src="{{ theme_url }}/js/jquery-1.10.2.min.js"></script>
         <!-- Modernizer -->
