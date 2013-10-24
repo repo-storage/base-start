@@ -1,4 +1,4 @@
-{% extends base %}
+{% extends base ? base : 'base.html' %}
 {% block cover %}
 <section id="cover" class="cover fold">
     <div class="container v-align">
